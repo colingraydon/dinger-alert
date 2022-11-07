@@ -29,7 +29,7 @@ public class Complex {
 
 
 
-    // return a string representation of the invoking Complex object
+    // return a string representation of the Complex object
     public String toString() {
         if (im == 0) return re + "";
         if (re == 0) return im + "i";
@@ -49,7 +49,7 @@ public class Complex {
 
     // return a new Complex object whose value is (this + b)
     public Complex plus(Complex b) {
-        Complex a = this;             // invoking object
+        Complex a = this;          
         double real = a.re + b.re;
         double imag = a.im + b.im;
         return new Complex(real, imag);

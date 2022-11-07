@@ -3,19 +3,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.lang.annotation.Target;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.Arrays;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.sound.sampled.AudioFormat;
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.DataLine;
-import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.TargetDataLine;
-import java.io.OutputStream;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 
@@ -24,10 +12,10 @@ import java.util.HashMap;
 // /Users/colingraydon/Desktop/FingerprintTest/Metallica Master Of Puppets.wav
 public class SongDownloader {
 
-    private HashMap<String, Complex[]> map;
+    private ArrayList<Song> allSongs;
 
     public SongDownloader() {
-        map = new HashMap<String, Complex[]>();
+        allSongs = new ArrayList<Song>();
     }
 
     public byte[] getSingleSong(String filePath) throws IOException {
@@ -59,8 +47,7 @@ public class SongDownloader {
             int l = name.length();
             name = name.substring(0, l-4);
             byte[] byteArr = getSingleSong(songPath);
-            Complex[] complexArr = Complex.byteToComplex(byteArr);
-            map.put(name, complexArr);
+            //logic for breaking array into chunks and using FFT must go here
         }
     }
     public static void main(String[] args) throws IOException {
