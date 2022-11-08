@@ -14,6 +14,11 @@ public class SongDownloader {
 
     private ArrayList<Song> allSongs;
 
+    //this may need to be updated.
+    //2 channels * 16 bit samples * 2 bytes, for 1 sec, is 176000 bytes
+    //chunkzise should be 176000 for now
+    final int CHUNK_SIZE = 176000;
+
     public SongDownloader() {
         allSongs = new ArrayList<Song>();
     }
