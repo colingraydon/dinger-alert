@@ -1,6 +1,5 @@
 public class Song {
     
-    private long[] hash;
     private String name;
 
     public Song() {
@@ -9,7 +8,6 @@ public class Song {
 
     public Song(String name, long[] hash) {
         this.name = name;
-        this.hash = hash;
     }
 
     public String getName() {
@@ -20,11 +18,6 @@ public class Song {
         this.name = name;
     }
 
-    public long[] getHash() {
-        return this.hash;
-    }
 
-    public void setHash(long[] hash) {
-        this.hash = hash;
-    }
+
 }
