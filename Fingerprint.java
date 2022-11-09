@@ -2,17 +2,15 @@ public class Fingerprint {
     
     private String song;
     private int second;
-    private long hash;
 
     public Fingerprint() {
 
     }
 
-    public Fingerprint(String song, int second, long hash) {
+    public Fingerprint(String song, int second) {
 
         this.song = song;
         this.second = second;
-        this.hash = hash;
     }
 
     public String getSong() {
@@ -31,13 +29,13 @@ public class Fingerprint {
         this.second = second;
     }
 
-    public long getHash() {
-        return this.hash;
-    }
+    // public long getHash() {
+    //     return this.hash;
+    // }
 
-    public void setHash(long hash) {
+    // public void setHash(long hash) {
 
-        this.hash = hash;
-    }
+    //     this.hash = hash;
+    // }
 
 }

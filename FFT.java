@@ -9,7 +9,7 @@ public class FFT {
         // base case
         if (n == 1) return new Complex[] { x[0] };
 
-        // radix 2 Cooley-Tukey FFT
+        // Cooley-Tukey FFT
         if (n % 2 != 0) {
             throw new IllegalArgumentException("n is not a power of 2");
         }
@@ -22,7 +22,7 @@ public class FFT {
         Complex[] evenFFT = fft(even);
 
         // compute FFT of odd terms
-        Complex[] odd  = even;  // reuse the array (to avoid n log n space)
+        Complex[] odd  = even;  // reuse the array
         for (int k = 0; k < n/2; k++) {
             odd[k] = x[2*k + 1];
         }
