@@ -3,6 +3,7 @@ import java.util.HashMap;
 public class ByteProcessor {
     
 
+    //eventually will pass in information about channel/data, this is the naive implementation currently
     public ByteProcessor() {
     }
 
